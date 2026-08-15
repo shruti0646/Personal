@@ -1,0 +1,753 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy 20th Birthday 🎀</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Segoe UI", sans-serif;
+    background: #fff0f6;
+    color: #5b234d;
+    overflow-x: hidden;
+}
+
+/* ---------- HERO ---------- */
+
+.hero {
+    min-height: 100vh;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    overflow: hidden;
+    background:
+        radial-gradient(circle at 20% 20%, #ffd6e8 0%, transparent 25%),
+        radial-gradient(circle at 80% 30%, #e8d5ff 0%, transparent 25%),
+        linear-gradient(135deg, #fff0f6, #ffe1ef, #f5e5ff);
+}
+
+.hero-content {
+    z-index: 5;
+    padding: 20px;
+}
+
+.small-text {
+    font-size: 1.2rem;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    animation: fadeDown 1.5s ease;
+}
+
+.hero h1 {
+    font-size: clamp(3rem, 9vw, 7rem);
+    margin: 10px 0;
+    color: #d63384;
+    text-shadow: 0 5px 20px rgba(214, 51, 132, 0.25);
+    animation: glow 2s infinite alternate;
+}
+
+.hero h2 {
+    font-size: clamp(1.5rem, 4vw, 2.7rem);
+    color: #8e4585;
+    animation: fadeUp 1.5s ease;
+}
+
+.age {
+    font-size: clamp(7rem, 25vw, 16rem);
+    font-weight: 900;
+    line-height: 0.8;
+    color: transparent;
+    -webkit-text-stroke: 3px #d63384;
+    text-shadow: 0 0 30px rgba(214, 51, 132, 0.3);
+    animation: ageFloat 3s ease-in-out infinite;
+}
+
+.enter-btn {
+    display: inline-block;
+    margin-top: 35px;
+    padding: 15px 35px;
+    border-radius: 50px;
+    background: #d63384;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    box-shadow: 0 10px 30px rgba(214, 51, 132, .3);
+    transition: .3s;
+}
+
+.enter-btn:hover {
+    transform: translateY(-5px) scale(1.05);
+    background: #b52b70;
+}
+
+/* ---------- FLOATING HEARTS ---------- */
+
+.heart {
+    position: absolute;
+    color: rgba(214, 51, 132, .35);
+    font-size: 25px;
+    animation: floatHeart linear infinite;
+}
+
+.heart:nth-child(1) {
+    left: 10%;
+    animation-duration: 8s;
+}
+
+.heart:nth-child(2) {
+    left: 25%;
+    animation-duration: 10s;
+    animation-delay: 2s;
+}
+
+.heart:nth-child(3) {
+    left: 70%;
+    animation-duration: 7s;
+}
+
+.heart:nth-child(4) {
+    left: 85%;
+    animation-duration: 11s;
+    animation-delay: 3s;
+}
+
+.heart:nth-child(5) {
+    left: 50%;
+    animation-duration: 9s;
+}
+
+/* ---------- SECTIONS ---------- */
+
+section {
+    padding: 90px 20px;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #c02673;
+    margin-bottom: 50px;
+}
+
+.section-title span {
+    display: block;
+    font-size: 1rem;
+    color: #9b678f;
+    letter-spacing: 3px;
+    margin-bottom: 8px;
+}
+
+/* ---------- MESSAGE ---------- */
+
+.message {
+    background: white;
+}
+
+.message-box {
+    max-width: 850px;
+    margin: auto;
+    background: linear-gradient(135deg, #fff5fa, #fff);
+    padding: 50px;
+    border-radius: 30px;
+    box-shadow: 0 20px 60px rgba(140, 50, 110, .12);
+    text-align: center;
+    border: 1px solid #ffd1e4;
+}
+
+.message-box p {
+    font-size: 1.15rem;
+    line-height: 2;
+    color: #69385e;
+}
+
+.signature {
+    margin-top: 30px;
+    font-size: 1.4rem;
+    color: #d63384;
+    font-weight: bold;
+}
+
+/* ---------- CAKE ---------- */
+
+.cake-section {
+    background: linear-gradient(135deg, #ffe5f0, #f7eaff);
+    text-align: center;
+}
+
+.cake {
+    width: 220px;
+    height: 130px;
+    background: #ff9fc7;
+    margin: 100px auto 40px;
+    border-radius: 15px 15px 30px 30px;
+    position: relative;
+    box-shadow: 0 15px 30px rgba(180, 70, 130, .2);
+}
+
+.cake::before {
+    content: "";
+    position: absolute;
+    top: -35px;
+    left: 0;
+    width: 220px;
+    height: 45px;
+    background: #fff;
+    border-radius: 50%;
+}
+
+.cake::after {
+    content: "♡  ♡  ♡";
+    position: absolute;
+    color: white;
+    font-size: 25px;
+    left: 40px;
+    top: 50px;
+}
+
+.candle {
+    width: 10px;
+    height: 55px;
+    background: #d63384;
+    position: absolute;
+    top: -80px;
+    border-radius: 5px;
+}
+
+.candle:nth-child(1) {
+    left: 60px;
+}
+
+.candle:nth-child(2) {
+    left: 105px;
+}
+
+.candle:nth-child(3) {
+    left: 150px;
+}
+
+.flame {
+    position: absolute;
+    width: 18px;
+    height: 25px;
+    background: #ffb703;
+    border-radius: 50% 50% 50% 0;
+    transform: rotate(-45deg);
+    top: -105px;
+    left: -4px;
+    animation: flicker .6s infinite alternate;
+}
+
+/* ---------- PHOTOS ---------- */
+
+.photos {
+    background: #fff;
+}
+
+.photo-grid {
+    max-width: 1000px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.photo {
+    height: 300px;
+    border-radius: 25px;
+    background: linear-gradient(135deg, #ffd1e3, #ead6ff);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+    transition: .4s;
+}
+
+.photo:hover {
+    transform: translateY(-10px) rotate(1deg);
+    box-shadow: 0 20px 40px rgba(160, 60, 120, .2);
+}
+
+.photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.photo span {
+    font-size: 4rem;
+}
+
+/* ---------- WISHES ---------- */
+
+.wishes {
+    background: linear-gradient(135deg, #fbe0ed, #eadcff);
+}
+
+.wish-cards {
+    max-width: 1000px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.card {
+    background: rgba(255,255,255,.8);
+    padding: 35px 25px;
+    border-radius: 25px;
+    text-align: center;
+    transition: .3s;
+    box-shadow: 0 10px 30px rgba(100,50,100,.08);
+}
+
+.card:hover {
+    transform: translateY(-10px);
+}
+
+.card .emoji {
+    font-size: 3rem;
+    margin-bottom: 15px;
+}
+
+.card h3 {
+    color: #c02673;
+    margin-bottom: 10px;
+}
+
+.card p {
+    line-height: 1.7;
+}
+
+/* ---------- FINAL ---------- */
+
+.final {
+    min-height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background:
+        radial-gradient(circle, rgba(255,255,255,.8), transparent 40%),
+        linear-gradient(135deg, #d63384, #9b59b6);
+    color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+.final h2 {
+    font-size: clamp(2.5rem, 7vw, 5rem);
+    margin-bottom: 20px;
+}
+
+.final p {
+    max-width: 700px;
+    font-size: 1.2rem;
+    line-height: 2;
+    margin: auto;
+}
+
+.final .big-heart {
+    font-size: 5rem;
+    margin-top: 30px;
+    animation: heartbeat 1.2s infinite;
+}
+
+/* ---------- CONFETTI ---------- */
+
+.confetti {
+    position: fixed;
+    width: 10px;
+    height: 10px;
+    top: -20px;
+    z-index: 100;
+    animation: fall 4s linear forwards;
+}
+
+/* ---------- ANIMATIONS ---------- */
+
+@keyframes glow {
+    from {
+        text-shadow: 0 5px 20px rgba(214,51,132,.2);
+    }
+    to {
+        text-shadow: 0 5px 40px rgba(214,51,132,.7);
+    }
+}
+
+@keyframes ageFloat {
+    0%,100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-15px);
+    }
+}
+
+@keyframes fadeDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes floatHeart {
+    0% {
+        bottom: -50px;
+        opacity: 0;
+        transform: translateX(0) rotate(0);
+    }
+    20% {
+        opacity: 1;
+    }
+    100% {
+        bottom: 110%;
+        opacity: 0;
+        transform: translateX(100px) rotate(360deg);
+    }
+}
+
+@keyframes flicker {
+    from {
+        transform: rotate(-45deg) scale(.9);
+    }
+    to {
+        transform: rotate(-45deg) scale(1.15);
+    }
+}
+
+@keyframes heartbeat {
+    0%,100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.25);
+    }
+}
+
+@keyframes fall {
+    to {
+        transform: translateY(110vh) rotate(720deg);
+        opacity: 0;
+    }
+}
+
+/* ---------- RESPONSIVE ---------- */
+
+@media(max-width: 700px) {
+
+    .photo-grid,
+    .wish-cards {
+        grid-template-columns: 1fr;
+    }
+
+    .photo {
+        height: 350px;
+    }
+
+    .message-box {
+        padding: 30px 20px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- HERO -->
+<section class="hero">
+
+    <div class="heart">♡</div>
+    <div class="heart">♥</div>
+    <div class="heart">♡</div>
+    <div class="heart">♥</div>
+    <div class="heart">♡</div>
+
+    <div class="hero-content">
+
+        <div class="small-text">
+            Today is all about you ✨
+        </div>
+
+        <div class="age">20</div>
+
+        <h1>Happy Birthday!</h1>
+
+        <h2>To the most beautiful girl 🎀</h2>
+
+        <a href="#message" class="enter-btn">
+            Open Your Surprise 💌
+        </a>
+
+    </div>
+</section>
+
+
+<!-- MESSAGE -->
+<section class="message" id="message">
+
+    <h2 class="section-title">
+        <span>A LITTLE MESSAGE</span>
+        For The Birthday Girl 💕
+    </h2>
+
+    <div class="message-box">
+
+        <p>
+            Happy 20th Birthday to an absolutely amazing girl! 🥹💗
+            <br><br>
+
+            Today isn't just another birthday. It's the beginning of a
+            beautiful new chapter of your life. Twenty years of smiles,
+            memories, lessons, dreams and countless little moments that
+            made you the person you are today.
+            <br><br>
+
+            May this year bring you everything your heart secretly wishes
+            for. May you laugh louder, dream bigger, love harder and create
+            memories that you'll look back on with the biggest smile.
+            <br><br>
+
+            Never forget how special you are. Keep being your beautiful,
+            crazy, kind and wonderful self. The world is genuinely brighter
+            with you in it. 🌸
+           <br> <br>
+
+Humesha yaad rakh… main humesha tere saath hoon, even if I don’t always show it. 🫂❤️ Ho sakta hai main har baar apni feelings words mein express na kar paun, ya har waqt tere paas na rahun, but that never means I care any less.
+Jab bhi tujhe lage ki tu akeli hai, bas ek baar mujhe yaad kar lena. Chahe tu khush ho, sad ho, confused ho, ya bas bina kisi reason ke kisi se baat karna chahti ho — I’ll always be there for you. 
+Life kitni bhi change ho jaaye, situations chahe kuch bhi ho, I hope you always remember that you have me. Maybe I don’t say it enough, but you genuinely mean a lot to me.
+So please, kabhi ye mat sochna ki you have to handle everything alone. Mai humesha tere saath hoon — even when I don’t show it. ❤️
+
+        <div class="signature">
+            Here's to 20 amazing years & many more to come! 🥂✨
+        </div>
+
+    </div>
+</section>
+
+
+<!-- CAKE -->
+<section class="cake-section">
+
+    <h2 class="section-title">
+        <span>MAKE A WISH</span>
+        20 Candles, One Beautiful Wish 🎂
+    </h2>
+
+    <div class="cake">
+
+        <div class="candle">
+            <div class="flame"></div>
+        </div>
+
+        <div class="candle">
+            <div class="flame"></div>
+        </div>
+
+        <div class="candle">
+            <div class="flame"></div>
+        </div>
+
+    </div>
+
+    <p>
+        Close your eyes... ✨<br>
+        Make your biggest wish... 💫<br>
+        And blow out the candles! 🎂
+    </p>
+
+</section>
+
+
+<!-- PHOTOS -->
+<section class="photos">
+
+    <h2 class="section-title">
+        <span>MEMORIES</span>
+        Beautiful Moments 📸
+    </h2>
+
+    <div class="photo-grid">
+
+    <div class="photo">
+        <img src="c:\Users\Admin\Downloads\WhatsApp Image 2026-08-15 at 11.18.09 PM.jpeg" alt="Birthday memory 1">
+    </div>
+
+    <div class="photo">
+        <img src="c:\Users\Admin\Downloads\mix7.jpeg" alt="Birthday memory 2">
+    </div>
+
+    <div class="photo">
+        <img src="c:\Users\Admin\Downloads\3.jpeg" alt="Birthday memory 3">
+    </div>
+
+    <div class="photo">
+        <img src="c:\Users\Admin\Downloads\2.jpeg" alt="Birthday memory 4">
+    </div>
+
+    <div class="photo">
+        <img src="c:\Users\Admin\Downloads\mix5.jpeg" alt="Birthday memory 5">
+    </div>
+
+    <div class="photo">
+        <img src="c:\Users\Admin\Downloads\mix6.jpeg" alt="Birthday memory 6">
+    </div>
+
+</div>
+<!-- WISHES -->
+<section class="wishes">
+
+    <h2 class="section-title">
+        <span>WISHING YOU</span>
+        Everything Beautiful 🌷
+    </h2>
+
+    <div class="wish-cards">
+
+        <div class="card">
+            <div class="emoji">🌸</div>
+            <h3>Happiness</h3>
+            <p>
+                May your days be filled with genuine smiles,
+                peaceful moments and endless happiness.
+            </p>
+        </div>
+
+        <div class="card">
+            <div class="emoji">✨</div>
+            <h3>Dreams</h3>
+            <p>
+                May every dream you have slowly turn into
+                something beautiful and real.
+            </p>
+        </div>
+
+        <div class="card">
+            <div class="emoji">💗</div>
+            <h3>Love</h3>
+            <p>
+                May you always be surrounded by people who
+                appreciate, respect and love you.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- FINAL -->
+<section class="final">
+
+    <div>
+
+        <h2>
+            Happy 20th Birthday! 🎀
+        </h2>
+
+        <p>
+            Here's to a year full of adventures,
+            unexpected happiness, beautiful memories,
+            late-night laughs, big achievements and
+            all the little moments that make life magical.
+            <br><br>
+
+            Never stop shining. ✨
+            <br>
+            Your best years are still ahead of you.
+        </p>
+
+        <div class="big-heart">
+            💗
+        </div>
+
+    </div>
+
+</section>
+
+
+<script>
+
+/* ---------- CONFETTI ---------- */
+
+function createConfetti() {
+
+    const symbols = ["🎀", "💗", "✨", "🌸", "💕", "⭐"];
+
+    for(let i = 0; i < 80; i++) {
+
+        const confetti = document.createElement("div");
+
+        confetti.className = "confetti";
+
+        confetti.innerHTML =
+            symbols[Math.floor(Math.random() * symbols.length)];
+
+        confetti.style.left =
+            Math.random() * 100 + "vw";
+
+        confetti.style.animationDuration =
+            (Math.random() * 3 + 3) + "s";
+
+        confetti.style.fontSize =
+            (Math.random() * 15 + 10) + "px";
+
+        document.body.appendChild(confetti);
+
+        setTimeout(() => {
+            confetti.remove();
+        }, 6000);
+    }
+}
+
+
+/* Start celebration after page loads */
+
+window.addEventListener("load", () => {
+
+    setTimeout(() => {
+        createConfetti();
+    }, 700);
+
+});
+
+
+/* More confetti when user clicks */
+
+document.addEventListener("click", () => {
+    createConfetti();
+});
+
+</script>
+
+</body>
+</html>
